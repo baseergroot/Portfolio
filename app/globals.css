@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 252 87% 67%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 217 76% 83%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 191 97% 77%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 252 87% 67%;
+  --radius: 0.5rem;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-500;
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.container-custom {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+}
+
+.btn-gradient {
+  @apply bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300;
+}
+
+.btn-outline {
+  @apply border border-white/20 hover:bg-white/5 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-2;
+}
+
+.section-subtitle {
+  @apply text-lg text-gray-400 max-w-3xl mx-auto mb-12;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-500/10;
+}
+
+/* Custom badge styling */
+.badge {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-white/10 text-gray-300;
+}
+
+@media (max-width: 640px) {
+  .section-title {
+    @apply text-2xl;
+  }
+
+  .section-subtitle {
+    @apply text-base mb-8;
+  }
+}
+
